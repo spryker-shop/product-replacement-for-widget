@@ -70,7 +70,7 @@ class ProductReplacementForWidgetDependencyProvider extends AbstractBundleDepend
      *
      * @return \Spryker\Yves\Kernel\Container
      */
-    protected function addProductDetailPageProductReplacementsForWidgetPlugins(Container $container)
+    protected function addProductDetailPageProductReplacementsForWidgetPlugins(Container $container): Container
     {
         $container[static::PLUGIN_PRODUCT_DETAIL_PAGE_PRODUCT_REPLACEMENTS_FOR_WIDGETS] = function () {
             return $this->getProductDetailPageProductReplacementsForWidgetPlugins();
