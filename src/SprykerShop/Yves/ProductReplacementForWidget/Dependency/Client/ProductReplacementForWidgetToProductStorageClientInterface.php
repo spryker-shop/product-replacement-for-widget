@@ -11,13 +11,6 @@ use Generated\Shared\Transfer\ProductViewTransfer;
 
 interface ProductReplacementForWidgetToProductStorageClientInterface
 {
-    /**
-     * @param int $idProductConcrete
-     * @param string $localeName
-     * @param array $selectedAttributes
-     *
-     * @return \Generated\Shared\Transfer\ProductViewTransfer|null
-     */
     public function findProductConcreteViewTransfer(int $idProductConcrete, string $localeName, array $selectedAttributes = []): ?ProductViewTransfer;
 
     /**

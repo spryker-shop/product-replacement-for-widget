@@ -16,9 +16,6 @@ use Spryker\Yves\Kernel\Widget\AbstractWidget;
  */
 class ProductReplacementForListWidget extends AbstractWidget
 {
-    /**
-     * @param string $sku
-     */
     public function __construct(string $sku)
     {
         $this->addParameter('products', $this->findReplacementForProducts($sku));
@@ -27,17 +24,11 @@ class ProductReplacementForListWidget extends AbstractWidget
         $this->addWidgets($this->getFactory()->getProductDetailPageProductReplacementsForWidgetPlugins());
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ProductReplacementForListWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ProductReplacementForWidget/views/product-replacement-for-list/product-replacement-for-list.twig';
@@ -71,11 +62,6 @@ class ProductReplacementForListWidget extends AbstractWidget
         return $filteredProductViewTransferList;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return bool
-     */
     protected function canShowProductReplacementFor(ProductViewTransfer $productViewTransfer): bool
     {
         if (!$this->getConfig()->isProductReplacementFilterActive()) {

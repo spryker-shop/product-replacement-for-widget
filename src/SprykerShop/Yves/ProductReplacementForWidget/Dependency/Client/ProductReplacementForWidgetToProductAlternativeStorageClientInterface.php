@@ -12,17 +12,7 @@ use Generated\Shared\Transfer\ProductViewTransfer;
 
 interface ProductReplacementForWidgetToProductAlternativeStorageClientInterface
 {
-    /**
-     * @param string $sku
-     *
-     * @return \Generated\Shared\Transfer\ProductReplacementStorageTransfer|null
-     */
     public function findProductReplacementForStorage(string $sku): ?ProductReplacementStorageTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return bool
-     */
     public function isAlternativeProductApplicable(ProductViewTransfer $productViewTransfer): bool;
 }

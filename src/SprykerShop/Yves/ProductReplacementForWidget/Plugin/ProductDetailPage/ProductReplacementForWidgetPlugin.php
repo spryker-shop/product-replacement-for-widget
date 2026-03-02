@@ -18,11 +18,6 @@ use SprykerShop\Yves\ProductReplacementForWidget\Widget\ProductReplacementForLis
  */
 class ProductReplacementForWidgetPlugin extends AbstractWidgetPlugin implements ProductReplacementForWidgetPluginInterface
 {
-    /**
-     * @param string $sku
-     *
-     * @return void
-     */
     public function initialize(string $sku): void
     {
         $widget = new ProductReplacementForListWidget($sku);

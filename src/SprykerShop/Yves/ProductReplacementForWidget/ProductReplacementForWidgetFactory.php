@@ -13,17 +13,11 @@ use SprykerShop\Yves\ProductReplacementForWidget\Dependency\Client\ProductReplac
 
 class ProductReplacementForWidgetFactory extends AbstractFactory
 {
-    /**
-     * @return \SprykerShop\Yves\ProductReplacementForWidget\Dependency\Client\ProductReplacementForWidgetToProductStorageClientInterface
-     */
     public function getProductStorageClient(): ProductReplacementForWidgetToProductStorageClientInterface
     {
         return $this->getProvidedDependency(ProductReplacementForWidgetDependencyProvider::CLIENT_PRODUCT_STORAGE);
     }
 
-    /**
-     * @return \SprykerShop\Yves\ProductReplacementForWidget\Dependency\Client\ProductReplacementForWidgetToProductAlternativeStorageClientInterface
-     */
     public function getProductAlternativeStorageClient(): ProductReplacementForWidgetToProductAlternativeStorageClientInterface
     {
         return $this->getProvidedDependency(ProductReplacementForWidgetDependencyProvider::CLIENT_PRODUCT_ALTERNATIVE_STORAGE);

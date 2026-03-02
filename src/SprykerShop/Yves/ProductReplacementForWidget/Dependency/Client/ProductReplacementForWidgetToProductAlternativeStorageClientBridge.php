@@ -25,21 +25,11 @@ class ProductReplacementForWidgetToProductAlternativeStorageClientBridge impleme
         $this->productAlternativeStorageClient = $productAlternativeStorageClient;
     }
 
-    /**
-     * @param string $sku
-     *
-     * @return \Generated\Shared\Transfer\ProductReplacementStorageTransfer|null
-     */
     public function findProductReplacementForStorage(string $sku): ?ProductReplacementStorageTransfer
     {
         return $this->productAlternativeStorageClient->findProductReplacementForStorage($sku);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return bool
-     */
     public function isAlternativeProductApplicable(ProductViewTransfer $productViewTransfer): bool
     {
         return $this->productAlternativeStorageClient->isAlternativeProductApplicable($productViewTransfer);
