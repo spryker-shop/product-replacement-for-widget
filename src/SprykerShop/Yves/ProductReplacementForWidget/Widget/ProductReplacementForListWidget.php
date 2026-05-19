@@ -54,12 +54,29 @@ class ProductReplacementForListWidget extends AbstractWidget
 
         $filteredProductViewTransferList = [];
         foreach ($productViewTransferList as $productViewTransfer) {
+            if (!$this->isProductAbstractAvailableForCurrentStore($productViewTransfer)) {
+                continue;
+            }
+
             if ($this->canShowProductReplacementFor($productViewTransfer)) {
                 $filteredProductViewTransferList[] = $productViewTransfer;
             }
         }
 
         return $filteredProductViewTransferList;
+    }
+
+    protected function isProductAbstractAvailableForCurrentStore(ProductViewTransfer $productViewTransfer): bool
+    {
+        $idProductAbstract = $productViewTransfer->getIdProductAbstract();
+
+        if ($idProductAbstract === null) {
+            return false;
+        }
+
+        return $this->getFactory()
+            ->getProductStorageClient()
+            ->findProductAbstractStorageData($idProductAbstract, $this->getLocale()) !== null;
     }
 
     protected function canShowProductReplacementFor(ProductViewTransfer $productViewTransfer): bool

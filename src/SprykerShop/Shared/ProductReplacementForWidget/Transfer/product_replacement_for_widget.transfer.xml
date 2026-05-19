@@ -6,6 +6,7 @@
     </transfer>
 
     <transfer name="ProductView">
+        <property name="idProductAbstract" type="int"/>
     </transfer>
 
 </transfers>

@@ -21,4 +21,9 @@ interface ProductReplacementForWidgetToProductStorageClientInterface
      * @return array<\Generated\Shared\Transfer\ProductViewTransfer>
      */
     public function getProductConcreteViewTransfers(array $productConcreteIds, string $localeName, array $selectedAttributes = []): array;
+
+    /**
+     * @return array<string, mixed>|null
+     */
+    public function findProductAbstractStorageData(int $idProductAbstract, string $localeName): ?array;
 }
